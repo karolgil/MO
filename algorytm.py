@@ -1,7 +1,10 @@
+from przystanek import Przystanek
+from rozwiazanie import Rozwiazanie
+
 class AlgorytmEwolucyjny(object):
     def __init__(self, dlugosc_listy_rozwiazan=100, limit_iteracji_bez_poprawy=100):
         self.dlugosc_listy_rozwiazan = dlugosc_listy_rozwiazan
-        self.lista_rozwiazan = self.wygeneruj_rozwiazania_poczatkowe(dlugosc_listy_rozwiazan)
+        self.lista_rozwiazan = self.wygeneruj_rozwiazania_poczatkowe()
         self.kolejnych_iteracji_bez_poprawy = 0
         self.limit_iteracji_bez_poprawy = limit_iteracji_bez_poprawy
         
@@ -83,10 +86,10 @@ class AlgorytmEwolucyjny(object):
     def wygeneruj_rozwiazanie_na_podstawie_listy_miast(self, lista_miast):
         czas_przybycia_do_miasta = 0
         trasa = []
-        for indeks, miasto in lista_miast.iteritems():
+        for indeks, miasto in enumerate(lista_miast):
             if indeks + 1 == len(lista_miast):
                 break
-            nastepne_miasto = liasta_miast[indeks+1]
+            nastepne_miasto = lista_miast[indeks+1]
             przystanek = Przystanek(miasto, nastepne_miasto, czas_przybycia_do_miasta)
             trasa.append(przystanek)
             czas_przybycia_do_miasta = przystanek.czas_przybycia_do_nastepnego_miasta

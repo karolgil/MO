@@ -18,5 +18,5 @@ class Miasto(object):
                 if dane_odjazdu[0] == self.nazwa:
                     if dane_odjazdu[1] not in self.tablica_odjazdow.keys():
                         self.tablica_odjazdow[dane_odjazdu[1]] = []
-                    odj = Odjazd(dane_odjazdu[0],dane_odjazdu[1],dane_odjazdu[2],dane_odjazdu[3])
+                    odj = Odjazd(dane_odjazdu[0],dane_odjazdu[1],float(dane_odjazdu[2]),float(dane_odjazdu[3]))
                     self.tablica_odjazdow[dane_odjazdu[1]].append(odj)

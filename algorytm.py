@@ -1,7 +1,7 @@
 class AlgorytmEwolucyjny(object):
     def __init__(self, dlugosc_listy_rozwiazan=100, limit_iteracji_bez_poprawy=100):
         self.dlugosc_listy_rozwiazan = dlugosc_listy_rozwiazan
-        self.lista_rozwiazan = self.wygeneruj_rozwiazania_poczatkowe(dlugosc_listy_rozwiazan):
+        self.lista_rozwiazan = self.wygeneruj_rozwiazania_poczatkowe(dlugosc_listy_rozwiazan)
         self.kolejnych_iteracji_bez_poprawy = 0
         self.limit_iteracji_bez_poprawy = limit_iteracji_bez_poprawy
         
@@ -15,7 +15,7 @@ class AlgorytmEwolucyjny(object):
     def petla_algorytmu(self):
         while self.kolejnych_iteracji_bez_poprawy < self.limit_iteracji_bez_poprawy:
             self.iteracja_algorytmu()
-        print self.lista_rozwiazan[0]
+        print(self.lista_rozwiazan[0])
     
     
     def iteracja_algorytmu(self):
@@ -34,7 +34,7 @@ class AlgorytmEwolucyjny(object):
         return self.lista_rozwiazan[random.randrange(self.dlugosc_listy_rozwiazan)]
         
     def krzyzuj_kolejnosc_miast(self, rozwiazanie_1, rozwiazanie_2):
-        """Krzy¿owanie z porzadkowaniem (OX)
+        """Krzyzowanie z porzadkowaniem (OX)
         L1 -> [A,B,C,D,E,F,Z]
         L2 -> [D,F,A,E,B,C,Z]
         pop:

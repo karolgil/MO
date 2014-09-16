@@ -34,7 +34,7 @@ class AlgorytmEwolucyjny(object):
         return self.lista_rozwiazan[random.randrange(self.dlugosc_listy_rozwiazan)]
         
     def krzyzuj_kolejnosc_miast(self, rozwiazanie_1, rozwiazanie_2):
-        """Krzy¿owanie z po¿¹dkowaniem (OX)
+        """Krzy¿owanie z porzadkowaniem (OX)
         L1 -> [A,B,C,D,E,F,Z]
         L2 -> [D,F,A,E,B,C,Z]
         pop:

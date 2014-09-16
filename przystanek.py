@@ -11,7 +11,7 @@ class Przystanek(object):
         self.czas_przyjazdu = czas_przyjazdu
         self.odjazd = self.znajdz_najlepszy_odjazd()
         self.czas_odjazdu = self.odjazd.czas_rozpoczecia_podrozy
-        self.czas_przybycia_do_nastepnego_miasta = self.odjazd + self.odjazd.czas_trwania_podrozy
+        self.czas_przybycia_do_nastepnego_miasta = self.czas_odjazdu + self.odjazd.czas_trwania_podrozy
         self.kara = wylicz_funkcje_kary_dla_przystanku()
         
     def wylicz_funkcje_kary_dla_przystanku(self):

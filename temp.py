@@ -1,20 +1,14 @@
 from miasto import Miasto
 from algorytm import AlgorytmEwolucyjny
+from itertools import permutations
 
 alg = AlgorytmEwolucyjny()
+alg.sortuj_liste_rozwiazan()
+# alg.wypisz_liste_rozwiazan()
 
-plik = "rozklady_jazdy.data"
+alg.petla_algorytmu()
 
-krakow = Miasto("krakow", 8, plik)
-warszawa = Miasto("warszawa", 10, plik)
-gdansk = Miasto("gdansk", 5, plik)
-wroclaw = Miasto("wroclaw", 2, plik)
-soncz = Miasto("soncz", 7, plik)
-poznan = Miasto("poznan", 7, plik)
-rzeszow = Miasto("rzeszow", 5, plik)
+# alg.wypisz_liste_rozwiazan()
 
-lista_miast = [krakow, warszawa, gdansk, wroclaw,poznan, rzeszow, soncz]
-
-# print "\n\n".join([str(x) for x in lista_miast])
-
-print alg.wygeneruj_rozwiazanie_na_podstawie_listy_miast(lista_miast)
+        
+# print alg.wygeneruj_rozwiazanie_na_podstawie_listy_miast(lista_miast)

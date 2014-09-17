@@ -21,12 +21,13 @@ class Przystanek(object):
         return roznica_czasow(self.czas_odjazdu, self.obecne_miasto.zakladany_czas_pobytu)
         
     def znajdz_najlepszy_odjazd(self):
-        poprzednia_roznica = 999999
+        minimalna_roznica = 999999
+        najlepszy_odjazd = None
         for mozliwy_odjazd in self.obecne_miasto.tablica_odjazdow[self.nastepne_miasto.nazwa]:
             obecna_roznica = roznica_czasow(mozliwy_odjazd.czas_rozpoczecia_podrozy, self.obecne_miasto.zakladany_czas_pobytu)
-            if obecna_roznica <  poprzednia_roznica:
-                poprzednia_roznica = obecna_roznica
-            else:
-                return mozliwy_odjazd
+            if obecna_roznica <  minimalna_roznica:
+                minimalna_roznica = obecna_roznica
+                najlepszy_odjazd = mozliwy_odjazd
+        return najlepszy_odjazd
                 
         

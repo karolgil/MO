@@ -1,3 +1,5 @@
+import copy
+
 class Rozwiazanie(object):
     def __init__(self, trasa):
         self.trasa = trasa
@@ -10,6 +12,6 @@ class Rozwiazanie(object):
         return [przystanek.obecne_miasto for przystanek in self.trasa]
     
     def __str__(self):
-        return str(self.kara_calej_trasy) + "\n".join([str(przystanek) for przystanek in self.trasa])
+        return str(self.kara_calej_trasy) #+ "\n".join([str(przystanek) for przystanek in self.trasa])
         
     

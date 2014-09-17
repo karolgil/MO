@@ -9,7 +9,6 @@ class Miasto(object):
         
     def __str__(self):
         return self.nazwa
-        # return "\n".join([self.nazwa, str(self.zakladany_czas_pobytu), "\n".join(["\n".join([str(x) for x in odjazd]) for a, odjazd in self.tablica_odjazdow.items()])])
         
     def __cmp__(self, other):
         if self.nazwa == other.nazwa:

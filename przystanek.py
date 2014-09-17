@@ -2,6 +2,10 @@ def roznica_czasow(czas1, czas2):
     return abs(czas2-czas1)
 
 class Przystanek(object):
+    """
+    Klasa definiujaca kolejne etapy podrozy
+    Przechowuje czasy przyjazu/odjazdu zwiazane z obecnym miastem i czas przybycia do nastepnego miasta
+    """
     def __init__(self, obecne_miasto, nastepne_miasto, czas_przyjazdu):
         """
         obecne_miasto, nastepne_miasto -> obiekt miasto
@@ -21,6 +25,7 @@ class Przystanek(object):
         return roznica_czasow(self.czas_odjazdu, self.obecne_miasto.zakladany_czas_pobytu)
         
     def znajdz_najlepszy_odjazd(self):
+        """Trzeba poprawic"""
         minimalna_roznica = 999999
         najlepszy_odjazd = None
         for mozliwy_odjazd in self.obecne_miasto.tablica_odjazdow[self.nastepne_miasto.nazwa]:

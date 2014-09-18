@@ -24,7 +24,7 @@ class AlgorytmEwolucyjny(object):
         self.limit_iteracji_bez_poprawy = limit_iteracji_bez_poprawy
         
     def wypisz_liste_rozwiazan(self):
-        print "\n".join([str(x) for x in self.lista_rozwiazan])
+        print("\n".join([str(x) for x in self.lista_rozwiazan]))
         
     def wygeneruj_rozwiazania_poczatkowe(self, plik_miasta, plik_rozklad):
         """
@@ -157,8 +157,8 @@ class AlgorytmEwolucyjny(object):
             indeks = lista_potomka.index(PusteMiasto())
             lista_potomka[indeks] = lista_miast_2.pop(0)
         #7.    
-        lista_potomka.insert(0,self.miasto_poczatkowe)      
-        lista_potomka.append(self.miasto_poczatkowe)      
+        lista_potomka.insert(0,self.miasto_poczatkowe)
+        lista_potomka.append(self.miasto_poczatkowe)
         
         #8.
         potomek = self.wygeneruj_rozwiazanie_na_podstawie_listy_miast(lista_potomka)

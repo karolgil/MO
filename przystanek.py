@@ -1,6 +1,13 @@
-def roznica_czasow(czas1, czas2):
-    return abs(czas2-czas1)
+def roznica_czasow(czas_przyjazdu, czas_odjazdu):
+    if((czas_przyjazdu - czas_odjazdu) > 0):
+        return abs(24 - czas_przyjazdu + czas_odjazdu)
+    else:
+        return abs(czas_odjazdu - czas_przyjazdu)
 
+def funkcja_kary(czas_przyjazdu, czas_odjazdu, zakladany_czas_pobytu):
+    realny_czas_pobytu = roznica_czasow(czas_przyjazdu, czas_odjazdu)
+    return abs(realny_czas_pobytu - zakladany_czas_pobytu)
+        
 class Przystanek(object):
     """
     Klasa definiujaca kolejne etapy podrozy
@@ -22,14 +29,14 @@ class Przystanek(object):
         return str(self.kara)
         
     def wylicz_funkcje_kary_dla_przystanku(self):
-        return roznica_czasow(self.czas_odjazdu, self.obecne_miasto.zakladany_czas_pobytu)
+        return funkcja_kary(self.czas_przyjazdu, self.czas_odjazdu, self.obecne_miasto.zakladany_czas_pobytu)
         
     def znajdz_najlepszy_odjazd(self):
         """Trzeba poprawic"""
         minimalna_roznica = 999999
         najlepszy_odjazd = None
         for mozliwy_odjazd in self.obecne_miasto.tablica_odjazdow[self.nastepne_miasto.nazwa]:
-            obecna_roznica = roznica_czasow(mozliwy_odjazd.czas_rozpoczecia_podrozy, self.obecne_miasto.zakladany_czas_pobytu)
+            obecna_roznica = funkcja_kary(self.czas_przyjazdu, mozliwy_odjazd.czas_rozpoczecia_podrozy, self.obecne_miasto.zakladany_czas_pobytu)
             if obecna_roznica <  minimalna_roznica:
                 minimalna_roznica = obecna_roznica
                 najlepszy_odjazd = mozliwy_odjazd

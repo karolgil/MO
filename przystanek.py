@@ -1,4 +1,7 @@
 def roznica_czasow(czas_przyjazdu, czas_odjazdu):
+    """
+    Funkcja obliczajaca roznice czasow uwzgledniajac przy tym system 24-godzinny
+    """
     if((czas_przyjazdu - czas_odjazdu) > 0):
         return abs(24 - czas_przyjazdu + czas_odjazdu)
     else:
@@ -29,10 +32,16 @@ class Przystanek(object):
         return str(self.kara)
         
     def wylicz_funkcje_kary_dla_przystanku(self):
+        """
+        Funkcja obliczajaca kare jako roznice, pomiedzy zakladanym czasem pobytu w danym miescie, a czasem realnie spedzonym dla danego rozwiazania
+        """
         return funkcja_kary(self.czas_przyjazdu, self.czas_odjazdu, self.obecne_miasto.zakladany_czas_pobytu)
         
     def znajdz_najlepszy_odjazd(self):
-        """Trzeba poprawic"""
+        """
+        Funkcja oblicza dla danego przystanku najlepszy mozliwy odjazd do kolejnego miasta, podejmujac decyzje poprzez minimalizacje funkcji
+        kary dla konkretnej pary miast.
+        """
         minimalna_roznica = 999999
         najlepszy_odjazd = None
         for mozliwy_odjazd in self.obecne_miasto.tablica_odjazdow[self.nastepne_miasto.nazwa]:

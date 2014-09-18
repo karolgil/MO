@@ -2,6 +2,9 @@ from itertools import permutations
 from random import randint
 
 def generuj_rozklad():
+    """
+    Funkcja generuje na podstawie listy miast losowe godziny polaczen pomiedzy nimi, wyznaczajac od 1 do 4 polaczen w kazda strone kazdego dnia
+    """
     with open("miasta.data", 'r') as handler_do_pliku:
         miasta = []
         polaczenia = []
